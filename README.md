@@ -9,15 +9,15 @@ class LaunchViewTest {
   val paparazzi = Paparazzi(
     deviceConfig = PIXEL_5,
     theme = "android:Theme.Material.Light.NoActionBar"
-    // ...see docs for more options 
+    // ...see docs for more options
   )
- 
+
   @Test
   fun simple() {
     val view = paparazzi.inflate<LaunchView>(R.layout.launch)
-    // or... 
+    // or...
     // val view = LaunchView(paparazzi.context)
-    
+
     view.setModel(LaunchModel(title = "paparazzi"))
     paparazzi.snapshot(view)
   }
@@ -32,14 +32,14 @@ Tasks
 $ ./gradlew sample:testDebug
 ```
 
-Runs tests and generates an HTML report at `sample/build/reports/paparazzi/` showing all 
-test runs and snapshots. 
+Runs tests and generates an HTML report at `sample/build/reports/paparazzi/` showing all
+test runs and snapshots.
 
 ```
 $ ./gradlew sample:recordPaparazziDebug
 ```
 
-Saves snapshots as golden values to a predefined source-controlled location 
+Saves snapshots as golden values to a predefined source-controlled location
 (defaults to `src/test/snapshots`).
 
 ```
@@ -110,7 +110,7 @@ buildscript {
     google()
   }
   dependencies {
-    classpath 'app.cash.paparazzi:paparazzi-gradle-plugin:0.9.3'
+    classpath 'app.cash.paparazzi:paparazzi-gradle-plugin:1.0.0'
   }
 }
 
@@ -120,7 +120,7 @@ apply plugin: 'app.cash.paparazzi'
 Using the plugins DSL:
 ```groovy
 plugins {
-  id 'app.cash.paparazzi' version '0.9.3'
+  id 'app.cash.paparazzi' version '1.0.0'
 }
 ```
 
