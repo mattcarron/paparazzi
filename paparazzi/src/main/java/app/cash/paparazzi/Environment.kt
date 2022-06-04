@@ -38,7 +38,7 @@ data class Environment(
       val elements = platformDirPath.nameCount
       val platform = platformDirPath.subpath(elements - 1, elements)
       val platformVersion = platform.toString().split("-").last()
-      throw FileNotFoundException("Missing platform version $platformVersion. Install with sdkmanager --install \"platforms;$platform\"")
+      throw FileNotFoundException("Missing platform version $platformVersion in SDK located at: $platformDir. Install with sdkmanager --install \"platforms;$platform\"")
     }
   }
 }
